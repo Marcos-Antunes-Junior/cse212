@@ -32,7 +32,16 @@ public class Maze
     /// </summary>
     public void MoveLeft()
     {
-        // FILL IN CODE
+        if (_mazeMap.TryGetValue((_currX, _currY), out bool[] boolArray))
+        {
+
+            bool value = boolArray[0];
+            if (value == false)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+            _currX--;
+        }
     }
 
     /// <summary>
@@ -41,7 +50,16 @@ public class Maze
     /// </summary>
     public void MoveRight()
     {
-        // FILL IN CODE
+        if (_mazeMap.TryGetValue((_currX, _currY), out bool[] boolArray))
+        {
+
+            bool value = boolArray[1];
+            if (value == false)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+        }
+        _currX++;
     }
 
     /// <summary>
@@ -50,7 +68,16 @@ public class Maze
     /// </summary>
     public void MoveUp()
     {
-        // FILL IN CODE
+        if (_mazeMap.TryGetValue((_currX, _currY), out bool[] boolArray))
+        {
+
+            bool value = boolArray[2];
+            if (value == false)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+        }
+        _currY--;
     }
 
     /// <summary>
@@ -59,7 +86,16 @@ public class Maze
     /// </summary>
     public void MoveDown()
     {
-        // FILL IN CODE
+        if (_mazeMap.TryGetValue((_currX, _currY), out bool[] boolArray))
+        {
+
+            bool value = boolArray[3];
+            if (value == false)
+            {
+                throw new InvalidOperationException("Can't go that way!");
+            }
+        }
+        _currY++;
     }
 
     public string GetStatus()
